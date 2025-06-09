@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.isdol.carpool.app-mergeDebugResources-47:/layout/activity_trip_list.xml",
+        "source": "com.isdol.carpool.app-main-50:/layout/activity_trip_list.xml"
+    },
+    {
+        "merged": "com.isdol.carpool.app-mergeDebugResources-47:/layout/activity_login.xml",
+        "source": "com.isdol.carpool.app-main-50:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.isdol.carpool.app-mergeDebugResources-47:/layout/activity_register.xml",
+        "source": "com.isdol.carpool.app-main-50:/layout/activity_register.xml"
+    }
+]

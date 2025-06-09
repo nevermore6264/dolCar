@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DolCar - Xe Ghép</string>
+    <string name="login">Đăng nhập</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="register">Đăng ký</string>
+    <string name="register_now">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="email_required">Vui lòng nhập email</string>
+    <string name="password_required">Vui lòng nhập mật khẩu</string>
+    <string name="invalid_email">Email không hợp lệ</string>
+    <string name="phone_required">Vui lòng nhập số điện thoại</string>
+    <string name="invalid_phone">Số điện thoại không hợp lệ</string>
+    <string name="coming_soon">Tính năng đang được phát triển!</string>
+    
+    <!-- Registration strings -->
+    <string name="full_name">Họ và tên</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="select_role">Chọn vai trò</string>
+    <string name="driver">Tài xế</string>
+    <string name="passenger">Hành khách</string>
+    <string name="name_required">Vui lòng nhập họ tên</string>
+    <string name="password_not_match">Mật khẩu không khớp</string>
+    <string name="role_required">Vui lòng chọn vai trò</string>
+    <string name="role">Vai trò</string>
+    <string name="error_empty_field">Vui lòng điền đầy đủ thông tin</string>
+    <string name="error_invalid_phone">Số điện thoại không hợp lệ</string>
+    <string name="error_password_mismatch">Mật khẩu không khớp</string>
+    <string name="error_select_role">Vui lòng chọn vai trò</string>
+    <string name="register_success">Đăng ký thành công</string>
+</resources> 
