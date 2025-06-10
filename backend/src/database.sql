@@ -81,3 +81,6 @@ MODIFY COLUMN email VARCHAR(255) NULL;
 ALTER TABLE users
 ADD CONSTRAINT unique_phone UNIQUE (phone);
 
+ALTER TABLE routes
+DROP COLUMN estimated_time,
+DROP COLUMN base_price;

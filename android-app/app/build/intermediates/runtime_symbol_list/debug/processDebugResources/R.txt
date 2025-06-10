@@ -3032,6 +3032,7 @@ int id endToStart 0x7f0800b1
 int id enterAlways 0x7f0800b2
 int id enterAlwaysCollapsed 0x7f0800b3
 int id etConfirmPassword 0x7f0800b4
+int id etEmail 0x7f080206
 int id etFullName 0x7f0800b5
 int id etPassword 0x7f0800b6
 int id etPhone 0x7f0800b7
@@ -3324,6 +3325,7 @@ int id textinput_placeholder 0x7f0801d5
 int id textinput_prefix_text 0x7f0801d6
 int id textinput_suffix_text 0x7f0801d7
 int id tilConfirmPassword 0x7f0801d8
+int id tilEmail 0x7f080207
 int id tilFullName 0x7f0801d9
 int id tilPassword 0x7f0801da
 int id tilPhone 0x7f0801db
@@ -6942,3 +6944,4 @@ int styleable ViewTransition_upDuration 13
 int styleable ViewTransition_viewTransitionMode 14
 int[] styleable include { 0x7f030116 }
 int styleable include_constraintSet 0
+int xml network_security_config 0x7f120000

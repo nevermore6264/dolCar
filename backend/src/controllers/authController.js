@@ -38,10 +38,10 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { phone, password } = req.body;
 
     // Find user
-    const user = await User.findByEmail(email);
+    const user = await User.findByPhone(phone);
     if (!user) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
@@ -58,7 +58,7 @@ const login = async (req, res) => {
     });
 
     // Get user profile based on role
-    res.json({ token });
+    res.json({ token, role: user.role });
   } catch (error) {
     res.status(500).json({ message: "Server error" });
   }

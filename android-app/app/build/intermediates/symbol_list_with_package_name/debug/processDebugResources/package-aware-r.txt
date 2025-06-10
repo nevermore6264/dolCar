@@ -3033,6 +3033,7 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id etConfirmPassword
+id etEmail
 id etFullName
 id etPassword
 id etPhone
@@ -3325,6 +3326,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id tilConfirmPassword
+id tilEmail
 id tilFullName
 id tilPassword
 id tilPhone
@@ -5006,3 +5008,4 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
+xml network_security_config

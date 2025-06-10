@@ -31,6 +31,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputEditText etConfirmPassword;
 
   @NonNull
+  public final TextInputEditText etEmail;
+
+  @NonNull
   public final TextInputEditText etFullName;
 
   @NonNull
@@ -52,6 +55,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputLayout tilConfirmPassword;
 
   @NonNull
+  public final TextInputLayout tilEmail;
+
+  @NonNull
   public final TextInputLayout tilFullName;
 
   @NonNull
@@ -67,15 +73,17 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextView tvTitle;
 
   private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnRegister,
-      @NonNull TextInputEditText etConfirmPassword, @NonNull TextInputEditText etFullName,
-      @NonNull TextInputEditText etPassword, @NonNull TextInputEditText etPhone,
-      @NonNull RadioButton rbDriver, @NonNull RadioButton rbPassenger, @NonNull RadioGroup rgRole,
-      @NonNull TextInputLayout tilConfirmPassword, @NonNull TextInputLayout tilFullName,
-      @NonNull TextInputLayout tilPassword, @NonNull TextInputLayout tilPhone,
-      @NonNull TextView tvRoleTitle, @NonNull TextView tvTitle) {
+      @NonNull TextInputEditText etConfirmPassword, @NonNull TextInputEditText etEmail,
+      @NonNull TextInputEditText etFullName, @NonNull TextInputEditText etPassword,
+      @NonNull TextInputEditText etPhone, @NonNull RadioButton rbDriver,
+      @NonNull RadioButton rbPassenger, @NonNull RadioGroup rgRole,
+      @NonNull TextInputLayout tilConfirmPassword, @NonNull TextInputLayout tilEmail,
+      @NonNull TextInputLayout tilFullName, @NonNull TextInputLayout tilPassword,
+      @NonNull TextInputLayout tilPhone, @NonNull TextView tvRoleTitle, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
     this.etConfirmPassword = etConfirmPassword;
+    this.etEmail = etEmail;
     this.etFullName = etFullName;
     this.etPassword = etPassword;
     this.etPhone = etPhone;
@@ -83,6 +91,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
     this.rbPassenger = rbPassenger;
     this.rgRole = rgRole;
     this.tilConfirmPassword = tilConfirmPassword;
+    this.tilEmail = tilEmail;
     this.tilFullName = tilFullName;
     this.tilPassword = tilPassword;
     this.tilPhone = tilPhone;
@@ -129,6 +138,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.etEmail;
+      TextInputEditText etEmail = ViewBindings.findChildViewById(rootView, id);
+      if (etEmail == null) {
+        break missingId;
+      }
+
       id = R.id.etFullName;
       TextInputEditText etFullName = ViewBindings.findChildViewById(rootView, id);
       if (etFullName == null) {
@@ -171,6 +186,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tilEmail;
+      TextInputLayout tilEmail = ViewBindings.findChildViewById(rootView, id);
+      if (tilEmail == null) {
+        break missingId;
+      }
+
       id = R.id.tilFullName;
       TextInputLayout tilFullName = ViewBindings.findChildViewById(rootView, id);
       if (tilFullName == null) {
@@ -202,8 +223,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       return new ActivityRegisterBinding((ScrollView) rootView, btnRegister, etConfirmPassword,
-          etFullName, etPassword, etPhone, rbDriver, rbPassenger, rgRole, tilConfirmPassword,
-          tilFullName, tilPassword, tilPhone, tvRoleTitle, tvTitle);
+          etEmail, etFullName, etPassword, etPhone, rbDriver, rbPassenger, rgRole,
+          tilConfirmPassword, tilEmail, tilFullName, tilPassword, tilPhone, tvRoleTitle, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
