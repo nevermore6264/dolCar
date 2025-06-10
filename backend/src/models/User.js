@@ -14,14 +14,22 @@ class User {
     const hashedPassword = await bcrypt.hash(password, 10);
     const [result] = await db.execute(
       "INSERT INTO users (name, email, password, phone, role, driver_license, car_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [name, email, hashedPassword, phone, role, driverLicense, carId]
+      [
+        name ?? null,
+        email ?? null,
+        hashedPassword ?? null,
+        phone ?? null,
+        role ?? null,
+        driverLicense ?? null,
+        carId ?? null,
+      ]
     );
     return result.insertId;
   }
 
-  static async findByEmail(email) {
-    const [rows] = await db.execute("SELECT * FROM users WHERE email = ?", [
-      email,
+  static async findByPhone(phone) {
+    const [rows] = await db.execute("SELECT * FROM users WHERE phone = ?", [
+      phone,
     ]);
     return rows[0];
   }

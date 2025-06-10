@@ -72,3 +72,12 @@ CREATE TABLE IF NOT EXISTS bookings (
 -- Add foreign key for car_id in users table
 ALTER TABLE users
 ADD FOREIGN KEY (car_id) REFERENCES cars(id); 
+
+-- 1. Cho phép email có thể NULL
+ALTER TABLE users
+MODIFY COLUMN email VARCHAR(255) NULL;
+
+-- 2. Đảm bảo phone là duy nhất (UNIQUE)
+ALTER TABLE users
+ADD CONSTRAINT unique_phone UNIQUE (phone);
+

@@ -133,6 +133,10 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.isdol.carpool.ui.register.RegisterActivity
+ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:24:9-66
+	android:name
+		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:24:19-63
 activity#com.isdol.carpool.ui.trips.TripListActivity
 ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:25:9-27:40
 	android:exported
