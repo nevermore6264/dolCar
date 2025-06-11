@@ -33,6 +33,7 @@ const createBooking = async (req, res) => {
       user_id: user_id,
       seats_booked: seats_booked,
       status: "pending",
+      total_price: Number(trip.price) * Number(seats_booked),
       created_at: new Date(),
       updated_at: new Date(),
     });
