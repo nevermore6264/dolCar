@@ -6,11 +6,11 @@ const {
   getCarById,
   updateCarStatus,
 } = require("../controllers/carController");
-const { auth, isAdmin } = require("../middleware/auth");
+const { auth } = require("../middleware/auth");
 
 router.get("/", getAllCars);
 router.get("/:id", getCarById);
-router.post("/", auth, isAdmin, createCar);
-router.patch("/:id/status", auth, isAdmin, updateCarStatus);
+router.post("/", auth, createCar);
+router.patch("/:id/status", auth, updateCarStatus);
 
 module.exports = router;

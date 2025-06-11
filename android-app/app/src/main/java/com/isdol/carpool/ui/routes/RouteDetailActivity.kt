@@ -1,5 +1,6 @@
 package com.isdol.carpool.ui.routes
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.isdol.carpool.databinding.ActivityRouteDetailBinding
 import com.isdol.carpool.network.ApiConfig
 import com.isdol.carpool.network.BookingApi
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -47,9 +50,26 @@ class RouteDetailActivity : AppCompatActivity() {
     }
 
     private fun setupRetrofit() {
+        // Lấy token từ SharedPreferences
+        val sharedPref = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        val token = sharedPref.getString("token", null)
+
+        // Interceptor để thêm token vào header
+        val authInterceptor = Interceptor { chain ->
+            val requestBuilder = chain.request().newBuilder()
+            if (!token.isNullOrEmpty()) {
+                requestBuilder.addHeader("Authorization", "Bearer $token")
+            }
+            chain.proceed(requestBuilder.build())
+        }
+        val client = OkHttpClient.Builder()
+            .addInterceptor(authInterceptor)
+            .build()
+
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
         routeApi = retrofit.create(RouteApi::class.java)
         bookingApi = retrofit.create(BookingApi::class.java)

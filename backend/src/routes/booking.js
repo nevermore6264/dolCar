@@ -6,41 +6,47 @@ const auth = require("../middleware/auth");
 
 // Đặt xe
 router.post("/", auth, async (req, res) => {
-  try {
-    const { trip_id, seats_booked } = req.body;
-    const user_id = req.user.id;
+  //   try {
+  console.log("--- Đặt xe: Nhận request ---");
+  console.log("Body:", req.body);
+  const { trip_id, seats_booked } = req.body;
+  const user_id = req.user.id;
+  console.log("User ID:", user_id);
 
-    // Kiểm tra chuyến xe có tồn tại không
-    const trip = await Trip.getById(trip_id);
-    if (!trip) {
-      return res.status(404).json({ message: "Không tìm thấy chuyến xe" });
-    }
-
-    // Kiểm tra số ghế còn trống
-    if (trip.available_seats < seats_booked) {
-      return res.status(400).json({ message: "Số ghế còn trống không đủ" });
-    }
-
-    // Tạo booking mới
-    const booking = await Booking.create({
-      trip_id,
-      user_id,
-      seats_booked,
-      status: "pending",
-      booking_date: new Date(),
-    });
-
-    // Cập nhật số ghế trống
-    await Trip.updateAvailableSeats(
-      trip_id,
-      trip.available_seats - seats_booked
-    );
-
-    res.status(201).json(booking);
-  } catch (error) {
-    console.error("Error creating booking:", error);
-    res.status(500).json({ message: "Lỗi server" });
+  // Kiểm tra chuyến xe có tồn tại không
+  const trip = await Trip.getById(trip_id);
+  console.log("Trip:", trip);
+  if (!trip) {
+    console.log("Không tìm thấy chuyến xe");
+    return res.status(404).json({ message: "Không tìm thấy chuyến xe" });
   }
+
+  // Kiểm tra số ghế còn trống
+  if (trip.available_seats < seats_booked) {
+    console.log("Số ghế còn trống không đủ");
+    return res.status(400).json({ message: "Số ghế còn trống không đủ" });
+  }
+
+  // Tạo booking mới
+  const booking = await Booking.create({
+    trip_id,
+    user_id,
+    seats_booked,
+    status: "pending",
+    created_at: new Date(),
+    updated_at: new Date(),
+  });
+  console.log("Booking đã tạo:", booking);
+
+  // Cập nhật số ghế trống
+  await Trip.updateAvailableSeats(trip_id, trip.available_seats - seats_booked);
+  console.log("Đã cập nhật số ghế trống cho trip");
+
+  res.status(201).json(booking);
+  //   } catch (error) {
+  //     console.error("Error creating booking:", error);
+  //     res.status(500).json({ message: "Lỗi server" });
+  //   }
 });
 
 // Lấy danh sách đặt xe của user

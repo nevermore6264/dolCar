@@ -1,34 +1,53 @@
 const Booking = require("../models/Booking");
 const Car = require("../models/Car");
+const Trip = require("../models/Trip");
 
 const createBooking = async (req, res) => {
   try {
-    const { carId, startDate, endDate, totalPrice } = req.body;
-    const userId = req.user.id;
+    console.log("--- Bắt đầu createBooking ---");
+    const { trip_id, seats_booked } = req.body;
+    console.log("Body:", req.body);
+    const user_id = req.user.id;
+    console.log("User ID:", user_id);
 
-    // Check if car is available
-    const car = await Car.findById(carId);
+    const trip = await Trip.getById(trip_id);
+    console.log("Trip:", trip);
+    if (!trip) {
+      console.log("Không tìm thấy chuyến xe");
+      return res.status(404).json({ message: "Không tìm thấy chuyến xe" });
+    }
+    if (!trip.car_id) {
+      console.log("Chuyến xe không có car_id");
+      return res.status(400).json({ message: "Chuyến xe không có car_id" });
+    }
+    const car = await Car.findById(trip.car_id);
+    console.log("Car:", car);
     if (!car || car.status !== "available") {
+      console.log("Car is not available");
       return res.status(400).json({ message: "Car is not available" });
     }
 
     // Create booking
-    const bookingId = await Booking.create({
-      userId,
-      carId,
-      startDate,
-      endDate,
-      totalPrice,
+    const booking = await Booking.create({
+      trip_id: trip.id,
+      user_id: user_id,
+      seats_booked: seats_booked,
+      status: "pending",
+      created_at: new Date(),
+      updated_at: new Date(),
     });
 
     // Update car status
-    await Car.updateStatus(carId, "booked");
+    await Car.updateStatus(trip.car_id, "booked");
+
+    console.log("--- Đã qua tất cả kiểm tra, chuẩn bị tạo booking ---");
 
     res
       .status(201)
-      .json({ id: bookingId, message: "Booking created successfully" });
+      .json({ id: booking.id, message: "Booking created successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    console.error("Error in createBooking:", error);
+    res.status(500).json({ message: "Lỗi server" });
   }
 };
 

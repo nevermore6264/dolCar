@@ -2,13 +2,20 @@ const db = require("../config/database");
 
 class Booking {
   static async create(bookingData) {
-    const { trip_id, user_id, seats_booked, status, booking_date } =
+    const { trip_id, user_id, seats_booked, status, created_at, updated_at } =
       bookingData;
+    console.log("Booking.create data:", bookingData);
+    console.log("trip_id:", trip_id);
+    console.log("user_id:", user_id);
+    console.log("seats_booked:", seats_booked);
+    console.log("status:", status);
+    console.log("created_at:", created_at);
+    console.log("updated_at:", updated_at);
 
     const [result] = await db.execute(
-      `INSERT INTO bookings (trip_id, user_id, seats_booked, status, booking_date)
-       VALUES (?, ?, ?, ?, ?)`,
-      [trip_id, user_id, seats_booked, status, booking_date]
+      `INSERT INTO bookings (trip_id, user_id, seats_booked, status, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [trip_id, user_id, seats_booked, status, created_at, updated_at]
     );
 
     return this.getById(result.insertId);
@@ -40,7 +47,7 @@ class Booking {
        JOIN cars c ON t.car_id = c.id
        JOIN users u ON t.driver_id = u.id
        WHERE b.user_id = ?
-       ORDER BY b.booking_date DESC`,
+       ORDER BY b.created_at DESC`,
       [userId]
     );
 

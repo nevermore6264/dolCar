@@ -6,7 +6,7 @@ const {
   getBookingById,
   updateBookingStatus,
 } = require("../controllers/bookingController");
-const { auth, isAdmin } = require("../middleware/auth");
+const { auth } = require("../middleware/auth");
 
 router.post("/", auth, createBooking);
 router.get("/my-bookings", auth, getUserBookings);
