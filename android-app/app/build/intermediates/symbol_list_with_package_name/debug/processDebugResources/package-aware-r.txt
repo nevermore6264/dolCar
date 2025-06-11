@@ -3232,6 +3232,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnBook
+id btnCancel
 id btnLogin
 id btnProfile
 id btnRegister
@@ -3323,6 +3325,7 @@ id etEmail
 id etFullName
 id etPassword
 id etPhone
+id etSeats
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3655,6 +3658,7 @@ id tvRegister
 id tvRoleTitle
 id tvRouteName
 id tvTitle
+id tvVehicleInfo
 id unchecked
 id uniform
 id unlabeled
@@ -3816,6 +3820,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_book_vehicle
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_route

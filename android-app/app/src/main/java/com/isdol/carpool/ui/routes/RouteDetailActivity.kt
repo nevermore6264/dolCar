@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.isdol.carpool.databinding.ActivityRouteDetailBinding
 import com.isdol.carpool.network.ApiConfig
+import com.isdol.carpool.network.BookingApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -17,6 +18,7 @@ class RouteDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRouteDetailBinding
     private lateinit var adapter: VehicleAdapter
     private lateinit var routeApi: RouteApi
+    private lateinit var bookingApi: BookingApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +26,8 @@ class RouteDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        setupRecyclerView()
         setupRetrofit()
+        setupRecyclerView()
 
         val routeId = intent.getIntExtra("routeId", -1)
         if (routeId != -1) {
@@ -44,18 +46,26 @@ class RouteDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupRecyclerView() {
-        adapter = VehicleAdapter()
-        binding.rvVehicles.layoutManager = LinearLayoutManager(this)
-        binding.rvVehicles.adapter = adapter
-    }
-
     private fun setupRetrofit() {
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         routeApi = retrofit.create(RouteApi::class.java)
+        bookingApi = retrofit.create(BookingApi::class.java)
+    }
+
+    private fun setupRecyclerView() {
+        adapter = VehicleAdapter(bookingApi)
+        adapter.setOnBookingSuccessListener {
+            // Refresh danh sách xe sau khi đặt xe thành công
+            val routeId = intent.getIntExtra("routeId", -1)
+            if (routeId != -1) {
+                fetchVehiclesAndDrivers(routeId)
+            }
+        }
+        binding.rvVehicles.layoutManager = LinearLayoutManager(this)
+        binding.rvVehicles.adapter = adapter
     }
 
     private fun fetchVehiclesAndDrivers(routeId: Int) {

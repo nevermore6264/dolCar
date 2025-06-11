@@ -13,6 +13,8 @@ color secondary_text
 color white
 drawable ic_car
 drawable ic_launcher_foreground
+id btnBook
+id btnCancel
 id btnLogin
 id btnProfile
 id btnRegister
@@ -23,6 +25,7 @@ id etEmail
 id etFullName
 id etPassword
 id etPhone
+id etSeats
 id ivCar
 id ivLogo
 id progressBar
@@ -53,6 +56,7 @@ id tvRegister
 id tvRoleTitle
 id tvRouteName
 id tvTitle
+id tvVehicleInfo
 layout activity_driver_home
 layout activity_login
 layout activity_profile
@@ -60,6 +64,7 @@ layout activity_register
 layout activity_route_detail
 layout activity_route_list
 layout activity_trip_history
+layout dialog_book_vehicle
 layout item_route
 layout item_vehicle
 mipmap ic_launcher

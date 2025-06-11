@@ -98,6 +98,19 @@ class Trip {
     );
     return result.affectedRows > 0;
   }
+
+  static async getById(id) {
+    const [rows] = await db.execute(`SELECT * FROM trips WHERE id = ?`, [id]);
+    return rows[0];
+  }
+
+  static async updateAvailableSeats(id, availableSeats) {
+    await db.execute(`UPDATE trips SET available_seats = ? WHERE id = ?`, [
+      availableSeats,
+      id,
+    ]);
+    return this.getById(id);
+  }
 }
 
 module.exports = Trip;

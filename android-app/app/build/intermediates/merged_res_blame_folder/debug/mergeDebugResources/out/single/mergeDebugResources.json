@@ -1,58 +1,62 @@
 [
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_trip_history.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_trip_history.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\drawable_ic_car.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\drawable\\ic_car.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_item_vehicle.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/item_vehicle.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_driver_home.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_driver_home.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_route_list.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_route_list.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_route_detail.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_route_detail.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_profile.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_profile.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_driver_home.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_driver_home.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_login.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_login.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/drawable_ic_car.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/drawable/ic_car.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_trip_history.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_trip_history.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_item_route.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\item_route.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_route_detail.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_route_detail.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_route_list.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_route_list.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_activity_register.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/activity_register.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/layout_item_route.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/layout/item_route.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_item_vehicle.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\item_vehicle.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/xml_network_security_config.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/xml/network_security_config.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-debug-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.isdol.carpool.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-debug-49:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-51:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "com.isdol.carpool.app-debug-49:/layout_dialog_book_vehicle.xml.flat",
+        "source": "com.isdol.carpool.app-main-51:/layout/dialog_book_vehicle.xml"
     }
 ]
