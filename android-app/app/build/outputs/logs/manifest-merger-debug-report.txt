@@ -139,12 +139,12 @@ activity#com.isdol.carpool.ui.register.RegisterActivity
 ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:25:9-66
 	android:name
 		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:25:19-63
-activity#com.isdol.carpool.ui.trips.TripListActivity
+activity#com.isdol.carpool.ui.routes.RouteListActivity
 ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
 		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:27:13-54
+		ADDED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml:27:13-56
 uses-sdk
 INJECTED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Freelancer\isDol\android-app\app\src\main\AndroidManifest.xml

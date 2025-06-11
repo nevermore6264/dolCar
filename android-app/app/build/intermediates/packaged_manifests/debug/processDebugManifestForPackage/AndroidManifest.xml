@@ -40,7 +40,7 @@
         </activity>
         <activity android:name="com.isdol.carpool.ui.register.RegisterActivity" />
         <activity
-            android:name="com.isdol.carpool.ui.trips.TripListActivity"
+            android:name="com.isdol.carpool.ui.routes.RouteListActivity"
             android:exported="false" />
 
         <provider

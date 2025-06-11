@@ -2952,7 +2952,9 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnLogin
+id btnProfile
 id btnRegister
+id btnTripHistory
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3217,7 +3219,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
-id rvTrips
+id rvRoutes
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3228,6 +3230,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchView
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -3346,8 +3349,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDistance
 id tvRegister
 id tvRoleTitle
+id tvRouteName
 id tvTitle
 id unchecked
 id uniform
@@ -3479,9 +3484,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_driver_home
 layout activity_login
+layout activity_profile
 layout activity_register
-layout activity_trip_list
+layout activity_route_list
+layout activity_trip_history
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3498,6 +3506,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout item_route
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

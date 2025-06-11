@@ -17,11 +17,13 @@ const authRoutes = require("./routes/auth");
 const carRoutes = require("./routes/cars");
 const bookingRoutes = require("./routes/bookings");
 const tripRoutes = require("./routes/trips");
+const routeRoutes = require("./routes/routes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/trips", tripRoutes);
+app.use("/api/routes", routeRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

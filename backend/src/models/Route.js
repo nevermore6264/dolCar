@@ -47,6 +47,10 @@ class Route {
         `);
     return rows;
   }
+
+  static async getAll() {
+    return this.findAll();
+  }
 }
 
 module.exports = Route;

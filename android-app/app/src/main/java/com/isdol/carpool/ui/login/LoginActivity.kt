@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.isdol.carpool.R
 import com.isdol.carpool.databinding.ActivityLoginBinding
 import com.isdol.carpool.ui.register.RegisterActivity
-import com.isdol.carpool.ui.trips.TripListActivity
+import com.isdol.carpool.ui.routes.RouteListActivity
 import com.isdol.carpool.network.ApiConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,6 +16,7 @@ import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.isdol.carpool.ui.driver.DriverHomeActivity
 
 data class LoginRequest(
     val phone: String,
@@ -58,10 +59,19 @@ class LoginActivity : AppCompatActivity() {
                 authApi.login(request).enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful && response.body()?.token != null) {
-                            Toast.makeText(this@LoginActivity, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
-                            // TODO: Lưu token nếu cần
-                            val intent = Intent(this@LoginActivity, TripListActivity::class.java)
-                            startActivity(intent)
+                            val role = response.body()?.user?.let {
+                                // Nếu user là object Map hoặc JsonObject, lấy role
+                                if (it is Map<*, *>) it["role"]?.toString() else null
+                            } ?: "passenger"
+                            if (role == "driver") {
+                                val intent = Intent(this@LoginActivity, DriverHomeActivity::class.java)
+                                intent.putExtra("token", response.body()?.token)
+                                startActivity(intent)
+                            } else {
+                                val intent = Intent(this@LoginActivity, RouteListActivity::class.java)
+                                intent.putExtra("token", response.body()?.token)
+                                startActivity(intent)
+                            }
                             finish()
                         } else {
                             Toast.makeText(this@LoginActivity, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show()

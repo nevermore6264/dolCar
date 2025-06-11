@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\activity_route_list.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_route_list.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\activity_trip_list.xml",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_trip_list.xml"
     },
@@ -12,7 +16,23 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.isdol.carpool.app-mergeDebugResources-47:/layout/activity_register.xml",
-        "source": "com.isdol.carpool.app-main-50:/layout/activity_register.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\activity_driver_home.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_driver_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\activity_trip_history.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_trip_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\item_route.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\item_route.xml"
+    },
+    {
+        "merged": "com.isdol.carpool.app-mergeDebugResources-47:/layout/activity_route_list.xml",
+        "source": "com.isdol.carpool.app-main-50:/layout/activity_route_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-mergeDebugResources-47:\\layout\\activity_profile.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.12\\com.isdol.carpool.app-main-50:\\layout\\activity_profile.xml"
     }
 ]
