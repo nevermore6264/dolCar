@@ -26,6 +26,10 @@
         <activity
             android:name=".ui.routes.RouteListActivity"
             android:exported="false" />
+        <activity android:name=".ui.routes.RouteDetailActivity" />
+        <activity android:name=".ui.driver.DriverHomeActivity" />
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.trips.TripHistoryActivity" />
             
     </application>
 </manifest> 

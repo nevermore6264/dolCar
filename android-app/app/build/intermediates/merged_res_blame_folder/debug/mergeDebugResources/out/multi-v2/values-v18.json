@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.isdol.carpool.app-mergeDebugResources-46:/values-v18/values-v18.xml",
+            "outputFile": "com.isdol.carpool.app-mergeDebugResources-47:/values-v18/values-v18.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\8.12\\transforms\\7d9bcf3f89d56a1e024207ba0c125363\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",

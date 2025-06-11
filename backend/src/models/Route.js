@@ -51,6 +51,35 @@ class Route {
   static async getAll() {
     return this.findAll();
   }
+
+  static async getRouteVehiclesAndAssets(routeId) {
+    const [rows] = await db.execute(
+      `
+      SELECT 
+        t.id as trip_id,
+        t.departure_date,
+        t.departure_time,
+        t.available_seats,
+        t.price,
+        c.id as car_id,
+        c.name as car_name,
+        c.type as car_type,
+        c.seats as car_seats,
+        c.image as car_image,
+        u.id as driver_id,
+        u.name as driver_name,
+        u.phone as driver_phone
+      FROM trips t
+      JOIN cars c ON t.car_id = c.id
+      JOIN users u ON t.driver_id = u.id
+      WHERE t.route_id = ?
+      AND t.status = 'scheduled'
+      ORDER BY t.departure_date, t.departure_time
+      `,
+      [routeId]
+    );
+    return rows;
+  }
 }
 
 module.exports = Route;

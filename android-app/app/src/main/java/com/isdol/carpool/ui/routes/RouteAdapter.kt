@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.isdol.carpool.databinding.ItemRouteBinding
 
-class RouteAdapter : RecyclerView.Adapter<RouteAdapter.RouteViewHolder>() {
+class RouteAdapter(private val onRouteClick: (Route) -> Unit) : RecyclerView.Adapter<RouteAdapter.RouteViewHolder>() {
     private var routes: List<Route> = emptyList()
 
     fun submitList(list: List<Route>?) {
@@ -24,10 +24,14 @@ class RouteAdapter : RecyclerView.Adapter<RouteAdapter.RouteViewHolder>() {
 
     override fun getItemCount(): Int = routes.size
 
-    class RouteViewHolder(private val binding: ItemRouteBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class RouteViewHolder(private val binding: ItemRouteBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(route: Route) {
             binding.tvRouteName.text = "${route.start_location} - ${route.end_location}"
             binding.tvDistance.text = "Khoảng cách: ${route.distance} km"
+            
+            binding.root.setOnClickListener {
+                onRouteClick(route)
+            }
         }
     }
 } 
