@@ -2,20 +2,28 @@ const db = require("../config/database");
 
 class Booking {
   static async create(bookingData) {
-    const { trip_id, user_id, seats_booked, status, created_at, updated_at } =
-      bookingData;
-    console.log("Booking.create data:", bookingData);
-    console.log("trip_id:", trip_id);
-    console.log("user_id:", user_id);
-    console.log("seats_booked:", seats_booked);
-    console.log("status:", status);
-    console.log("created_at:", created_at);
-    console.log("updated_at:", updated_at);
+    const {
+      trip_id,
+      user_id,
+      seats_booked,
+      status,
+      created_at,
+      updated_at,
+      total_price,
+    } = bookingData;
 
     const [result] = await db.execute(
-      `INSERT INTO bookings (trip_id, user_id, seats_booked, status, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [trip_id, user_id, seats_booked, status, created_at, updated_at]
+      `INSERT INTO bookings (trip_id, user_id, seats_booked, status, created_at, updated_at, total_price)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [
+        trip_id,
+        user_id,
+        seats_booked,
+        status,
+        created_at,
+        updated_at,
+        total_price,
+      ]
     );
 
     return this.getById(result.insertId);
