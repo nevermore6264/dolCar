@@ -5,7 +5,8 @@ const Trip = require("../models/Trip");
 const createBooking = async (req, res) => {
   try {
     console.log("--- Bắt đầu createBooking ---");
-    const { trip_id, seats_booked } = req.body;
+    const { trip_id, seats_booked, pickup_location, dropoff_location } =
+      req.body;
     console.log("Body:", req.body);
     const user_id = req.user.id;
     console.log("User ID:", user_id);
@@ -34,18 +35,19 @@ const createBooking = async (req, res) => {
       seats_booked: seats_booked,
       status: "pending",
       total_price: Number(trip.price) * Number(seats_booked),
+      pickup_location: pickup_location,
+      dropoff_location: dropoff_location,
       created_at: new Date(),
       updated_at: new Date(),
     });
+    console.log("Booking đã tạo:", booking);
 
     // Update car status
     await Car.updateStatus(trip.car_id, "booked");
 
     console.log("--- Đã qua tất cả kiểm tra, chuẩn bị tạo booking ---");
 
-    res
-      .status(201)
-      .json({ id: booking.id, message: "Booking created successfully" });
+    res.status(201).json(booking);
   } catch (error) {
     console.error("Error in createBooking:", error);
     res.status(500).json({ message: "Lỗi server" });
